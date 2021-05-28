@@ -39,10 +39,14 @@ def determinante(matriz):
     return resultado
  
 def inversa(matriz):
-    a = determinante(matriz)
-    resultado = [[],[]]
-    resultado[0].append((1/a)*matriz[1][1])
-    resultado[0].append((1/a)*(-matriz[0][1]))
-    resultado[1].append((1/a)*(-matriz[1][0]))
-    resultado[1].append((1/a)*matriz[0][0])
-    return resultado    
+    if len(matriz) == 1:
+        resultado = [1/(matriz[0])]
+        return resultado
+    else:
+        a = determinante(matriz)
+        resultado = [[],[]]
+        resultado[0].append((1/a)*matriz[1][1])
+        resultado[0].append((1/a)*(-matriz[0][1]))
+        resultado[1].append((1/a)*(-matriz[1][0]))
+        resultado[1].append((1/a)*matriz[0][0])
+    return resultado
