@@ -53,7 +53,7 @@ def bfgs(xk, x, yk, y, hk):
     return h
 
 
-def quasenewton(x,y):
+def metquasenewton(x,y):
     d = []
     k = 0
     h = [[1,0],[0,1]]
@@ -84,4 +84,4 @@ def quasenewton(x,y):
             break
     return x,y,k
 
-print(quasenewton(10,5))
+print(metquasenewton(10,10))
