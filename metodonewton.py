@@ -7,7 +7,7 @@ def metnewton(x,y):
     gradx = grad(x,y)[0]
     grady = grad(x,y)[1]
    
-    while not (gradx < 0.00000001 and grady < 0.00000001):
+    while not (abs(gradx) < 0.00000001 and abs(grady) < 0.00000001):
         gradx = grad(x,y)[0]
         grady = grad(x,y)[1]
        
@@ -25,4 +25,4 @@ def metnewton(x,y):
             break
     return x,y,k
 
-print (metnewton(10,10))
+print (metnewton(1,1))

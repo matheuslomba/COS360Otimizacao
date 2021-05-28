@@ -6,7 +6,7 @@ def metgrad(x,y):
     k = 0
     gradx = grad(x,y)[0]
     grady = grad(x,y)[1]
-    while not (gradx < 0.00000001 and grady < 0.00000001):
+    while not (abs(gradx) < 0.00000001 and abs(grady) < 0.00000001):
         gradx = grad(x,y)[0]
         grady = grad(x,y)[1]
         d = -gradx, -grady
@@ -14,8 +14,8 @@ def metgrad(x,y):
         x = x + t*d[0]
         y = y + t*d[1]
         k += 1
-        if k == 100:
+        if k == 1000:
             break
     return x,y,k
 
-print (metgrad(10,10))
+print (metgrad(1,1))

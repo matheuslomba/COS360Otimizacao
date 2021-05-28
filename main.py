@@ -19,10 +19,10 @@ def grad_d(x,y,d):
     return soma
 
 def hes(x, y):
-    hes_xx = 2 - (ln(3) * ( -ln(3) * exp(ln(3)/(x+y))) - 2 * (x+y) * exp(ln(3)/(x+y)) )/(x+y)**4
-    hes_xy = -1 * (ln(3) * ( -ln(3) * exp(ln(3)/(x+y))) - 2 * (x+y) * exp(ln(3)/(x+y) ) )/(x+y)**4
-    hes_yx = -1 * (ln(3) * ( -ln(3) * exp(ln(3)/(x+y))) - 2 * (x+y) * exp(ln(3)/(x+y) ) )/(x+y)**4
-    hes_yy = 2 - (ln(3) * ( -ln(3) * exp(ln(3)/(x+y))) - 2 * (x+y) * exp(ln(3)/(x+y)) )/(x+y)**4
+    hes_xx = 2 - (ln(3) * ( -ln(3) * exp(1)**(ln(3))/(x+y)) - 2 * (x+y) * exp(1)**(ln(3)/(x+y) ) )/(x+y)**4
+    hes_xy = -1 * (ln(3) * ( -ln(3) * exp(1)**(ln(3))/(x+y)) - 2 * (x+y) * exp(1)**(ln(3)/(x+y) ) )/(x+y)**4
+    hes_yx = -1 * (ln(3) * ( -ln(3) * exp(1)**(ln(3))/(x+y)) - 2 * (x+y) * exp(1)**(ln(3)/(x+y) ) )/(x+y)**4
+    hes_yy = 2 - (ln(3) * ( -ln(3) * exp(1)**(ln(3))/(x+y)) - 2 * (x+y) * exp(1)**(ln(3)/(x+y) ) )/(x+y)**4
     hessiana = [[],[]]
     hessiana[0].append(hes_xx)
     hessiana[0].append(hes_xy)
