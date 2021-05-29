@@ -5,8 +5,8 @@ def f(x, y):
     return funcao
 
 def grad( x, y ):
-    grad_x = 2*x - ( ln(3) * exp(ln(3)/(x+y)) ) / (x+y)**2
-    grad_y = 2*y - ( ln(3) * exp(ln(3)/(x+y)) ) / (x+y)**2
+    grad_x = 2*x - ( ln(3) * exp(1)**(ln(3))/(x+y)) / (x+y)**2
+    grad_y = 2*y - ( ln(3) * exp(1)**(ln(3))/(x+y)) / (x+y)**2
     gradiente = []
     gradiente.append(grad_x)
     gradiente.append(grad_y)
@@ -50,3 +50,5 @@ def inversa(matriz):
         resultado[1].append((1/a)*(-matriz[1][0]))
         resultado[1].append((1/a)*matriz[0][0])
     return resultado
+
+print(grad(0.7,-0.7))
