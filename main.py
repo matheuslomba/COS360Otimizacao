@@ -50,5 +50,3 @@ def inversa(matriz):
         resultado[1].append((1/a)*(-matriz[1][0]))
         resultado[1].append((1/a)*matriz[0][0])
     return resultado
-
-print(grad(0.7,-0.7))

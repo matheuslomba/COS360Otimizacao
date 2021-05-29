@@ -14,8 +14,8 @@ def metgrad(x,y):
         x = x + t*d[0]
         y = y + t*d[1]
         k += 1
-        if k == 1000:
+        if k == 100:
             break
-    return x,y,k
+    return x,y,k,f(x,y)
 
-print (metgrad(1,1))
+print (metgrad(10,10))

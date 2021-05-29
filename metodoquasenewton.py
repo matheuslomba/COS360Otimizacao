@@ -1,4 +1,4 @@
-from main import grad, inversa
+from main import grad, inversa, f
 from buscaarmijo import armijo
 from numpy import dot
 
@@ -80,8 +80,8 @@ def metquasenewton(x,y):
         h = bfgs(xk,x,yk,y,h)
 
         k += 1
-        if k == 1000:
+        if k == 100:
             break
-    return x,y,k
+    return x,y,k,f(x,y)
 
 print(metquasenewton(1,1))
