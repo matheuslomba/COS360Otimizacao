@@ -4,6 +4,7 @@ from main import grad, hes, inversa, f
 def metnewton(x,y):
     d = []
     k = 0
+    callarmijo = 0
     gradx = grad(x,y)[0]
     grady = grad(x,y)[1]
    
@@ -17,12 +18,13 @@ def metnewton(x,y):
         a = (-inver[0][0]) * gradx + (-inver[0][1]) * grady
         b = (-inver[1][0]) * gradx + (-inver[1][1]) * grady
         d = a, b
-        t = armijo(x,y,d)
+        t = armijo(x,y,d)[0]
+        callarmijo = armijo(x,y,d)[1]
         x = x + t*d[0]
         y = y + t*d[1]
         k += 1
         if k == 100:
             break
-    return x,y,k,f(x,y)
+    return k,callarmijo,x,y,f(x,y)
 
 print (metnewton(1,1))

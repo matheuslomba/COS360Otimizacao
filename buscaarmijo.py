@@ -13,4 +13,4 @@ def armijo(x,y,d):
     while auxarmijo(x,y,t,d) > f(x,y) + N*t*grad_d(x,y,d):
         t = gamma * t
         count += 1
-    return t
+    return (t,count)
