@@ -7,7 +7,7 @@ def auxarmijo(x,y,t,d):
 
 def armijo(x,y,d,t):
     gamma = 0.8
-    N = 0.5
+    N = 1/2
     count=0
     while auxarmijo(x,y,t,d) > f(x,y) + N*t*grad_d(x,y,d):
         t = gamma * t

@@ -7,6 +7,7 @@ def metgrad(x,y):
     count = 0
     callarmijo = 0
     t = 1
+    
     gradx = grad(x,y)[0]
     grady = grad(x,y)[1]
     while gradx != 0 and grady != 0:

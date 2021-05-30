@@ -5,12 +5,12 @@ def f(x, y):
     return funcao
 
 def grad( x, y ):
-    grad_x = 2*x - ( ln(3) * exp(1)**(ln(3))/(x+y)) / (x+y)**2
-    grad_y = 2*y - ( ln(3) * exp(1)**(ln(3))/(x+y)) / (x+y)**2
-    gradiente = []
-    gradiente.append(grad_x)
-    gradiente.append(grad_y)
-    return gradiente
+    gradx = 2*x - ((ln(3) * (exp(1)**(ln(3)/(x+y))) / (x+y)**2 ))
+    grady = 2*y - ((ln(3) * (exp(1)**(ln(3)/(x+y))) / (x+y)**2 ))
+    mgrad = []
+    mgrad.append(gradx)
+    mgrad.append(grady)
+    return mgrad
 
 def grad_d(x,y,d):
     a = grad(x,y)[0] * d[0]
@@ -21,6 +21,11 @@ def grad_d(x,y,d):
 def modulograd(x,y):
     mod = sqrt( (grad(x,y)[0])**2 + (grad(x,y)[1])**2 )
     return mod
+
+def modgrad(x,y):
+    a=x**2+y**2
+    b=a**(0.5)
+    return b
 
 def hes(x, y):
     hes_xx = 2 - (ln(3) * ( -ln(3) * exp(1)**(ln(3))/(x+y)) - 2 * (x+y) * exp(1)**(ln(3)/(x+y) ) )/(x+y)**4
