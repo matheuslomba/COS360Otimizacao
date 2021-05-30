@@ -5,12 +5,11 @@ def auxarmijo(x,y,t,d):
     b = y + t*d[1]
     return f(a,b)
 
-def armijo(x,y,d):
+def armijo(x,y,d,t):
     gamma = 0.8
     N = 0.5
-    t = 1
     count=0
     while auxarmijo(x,y,t,d) > f(x,y) + N*t*grad_d(x,y,d):
         t = gamma * t
         count += 1
-    return (t,count)
+    return t,count

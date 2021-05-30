@@ -56,7 +56,9 @@ def bfgs(xk, x, yk, y, hk):
 def metquasenewton(x,y):
     d = []
     k = 0
+    count = 0
     callarmijo = 0
+    t = 1
     h = [[1,0],[0,1]]
     xk = 0
     yk = 0
@@ -64,7 +66,7 @@ def metquasenewton(x,y):
     gradx = grad(x,y)[0]
     grady = grad(x,y)[1]
    
-    while not (abs(gradx) < 0.00000001 and abs(grady) < 0.00000001):
+    while gradx != 0 and grady != 0:
         gradx = grad(x,y)[0]
         grady = grad(x,y)[1]
 
@@ -72,8 +74,8 @@ def metquasenewton(x,y):
         b = (-1 * h[1][0] * gradx) + (-1 * h[1][1] * grady)
         d = a, b
 
-        t = armijo(x,y,d)[0]
-        callarmijo += armijo(x,y,d)[1]
+        t, count = armijo(x,y,d,t)
+        callarmijo += count
         xk += x
         yk += y
         x = x + t*d[0]
@@ -84,6 +86,8 @@ def metquasenewton(x,y):
         k += 1
         if k == 100:
             break
+        elif (abs(gradx) < 0.00000001 and abs(grady) < 0.00000001):
+            break
     return k,callarmijo,x,y,f(x,y)
 
-print(metquasenewton(1,1))
+print(metquasenewton(10,10))
