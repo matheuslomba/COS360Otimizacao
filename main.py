@@ -1,4 +1,4 @@
-from numpy import exp, log as ln
+from numpy import exp, log as ln, sqrt
 
 def f(x, y):
     funcao = 3**(1/(x+y)) + x**2 + y**2
@@ -17,6 +17,10 @@ def grad_d(x,y,d):
     b = grad(x,y)[1] * d[1]
     soma = a + b
     return soma
+
+def modulograd(x,y):
+    mod = sqrt( (grad(x,y)[0])**2 + (grad(x,y)[1])**2 )
+    return mod
 
 def hes(x, y):
     hes_xx = 2 - (ln(3) * ( -ln(3) * exp(1)**(ln(3))/(x+y)) - 2 * (x+y) * exp(1)**(ln(3)/(x+y) ) )/(x+y)**4

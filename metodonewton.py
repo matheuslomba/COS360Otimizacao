@@ -1,5 +1,5 @@
 from buscaarmijo import armijo
-from main import grad, hes, inversa, f
+from main import grad, hes, inversa, f, modulograd
 
 def metnewton(x,y):
     d = []
@@ -29,6 +29,11 @@ def metnewton(x,y):
             break
         elif (abs(gradx) < 0.00000001 and abs(grady) < 0.00000001):
             break
-    return k,callarmijo,x,y,f(x,y)
+    print ("Iter.: ", k)
+    print ("Call Armijo: ", callarmijo)
+    print ("Opt. Point: (", x, ",", y, ")")
+    print ("Opt Value: ", f(x,y))
+    print ("Error: ", modulograd(x,y))
+    return 0
 
 print (metnewton(10,10))
