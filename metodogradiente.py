@@ -1,4 +1,4 @@
-from main import grad, f, modulograd
+from main import grad, f, modulograd, hes
 from buscaarmijo import armijo
 
 def metgrad(x,y):
@@ -28,6 +28,16 @@ def metgrad(x,y):
     print ("Opt. Point: (", x, ",", y, ")")
     print ("Opt Value: ", f(x,y))
     print ("Error: ", modulograd(x,y))
+    print (hes(x,y))
     return 0
 
 print (metgrad(10,10))
+print("------------------")
+print (metgrad(6,6))
+print("------------------")
+print (metgrad(0.8,0.8))
+print("------------------")
+print (metgrad(0.5,0.5))
+print("------------------")
+print (metgrad(0.3,0.3))
+print("------------------")

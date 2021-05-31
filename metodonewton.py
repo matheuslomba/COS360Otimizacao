@@ -37,3 +37,12 @@ def metnewton(x,y):
     return 0
 
 print (metnewton(10,10))
+print("------------------")
+print (metnewton(6,6))
+print("------------------")
+print (metnewton(0.8,0.8))
+print("------------------")
+print (metnewton(0.5,0.5))
+print("------------------")
+print (metnewton(0.3,0.3))
+print("------------------")

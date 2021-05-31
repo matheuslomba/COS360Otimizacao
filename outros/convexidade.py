@@ -7,8 +7,8 @@ def convexo():
     x = 0.0
     y = 0.0
     while t <= 1:
-        for x in arange(0.0,100.0, 0.1):
-            for y in arange(0.0,100.0,0.1):
+        for x in arange(-10.0,10.0, 0.1):
+            for y in arange(-10.0,10.0,0.1):
                 hessiana = hes(x, y)
                 if isnan(hessiana[0][0]): #caso em que x = -y e, portanto, o cálculo da hessiana terá divisão por 0, indicando um ponto de descontinuidade da função.
                     return "O gráfico é não convexo e não côncavo."

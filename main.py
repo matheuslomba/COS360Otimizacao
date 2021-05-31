@@ -22,11 +22,6 @@ def modulograd(x,y):
     mod = sqrt( (grad(x,y)[0])**2 + (grad(x,y)[1])**2 )
     return mod
 
-def modgrad(x,y):
-    a=x**2+y**2
-    b=a**(0.5)
-    return b
-
 def hes(x, y):
     hes_xx = 2 - (ln(3) * ( -ln(3) * exp(1)**(ln(3))/(x+y)) - 2 * (x+y) * exp(1)**(ln(3)/(x+y) ) )/(x+y)**4
     hes_xy = -1 * (ln(3) * ( -ln(3) * exp(1)**(ln(3))/(x+y)) - 2 * (x+y) * exp(1)**(ln(3)/(x+y) ) )/(x+y)**4

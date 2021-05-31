@@ -1,4 +1,4 @@
-from main import grad
+from main import grad, f, modulograd
 from numpy import arange
 
 #Calcular os pontos críticos da função
@@ -10,9 +10,11 @@ def pts_criticos():
                 continue
             else:
                 g = grad(x,y)
-                if g[0] > -0.2 and g[0] < 0.2 and g[1] > -0.2 and g[1] < 0.2:
+                if abs(g[0]) < 10**(-4) and abs(g[1]) < 10**(-4):
                     print("x,y: ", x, " , ", y)
                     print("gradiente(x,y): ", g)
+                    print ("f(x,y): ", f(x,y))
+                    print ("Error: ", modulograd(x,y))
                     print("-------------")
     return 0
 

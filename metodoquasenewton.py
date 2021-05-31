@@ -95,4 +95,13 @@ def metquasenewton(x,y):
     print ("Error: ", modulograd(x,y))
     return 0
 
-print(metquasenewton(10,10))
+print (metquasenewton(10,10))
+print("------------------")
+print (metquasenewton(6,6))
+print("------------------")
+print (metquasenewton(0.8,0.8))
+print("------------------")
+print (metquasenewton(0.5,0.5))
+print("------------------")
+print (metquasenewton(0.3,0.3))
+print("------------------")
