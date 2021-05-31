@@ -27,7 +27,7 @@ def metnewton(x,y):
         k += 1
         if k == 100:
             break
-        elif (abs(gradx) < 0.00000001 and abs(grady) < 0.00000001):
+        elif (abs(gradx) <= 0.00000001 and abs(grady) <= 0.00000001):
             break
     print ("Iter.: ", k)
     print ("Call Armijo: ", callarmijo)

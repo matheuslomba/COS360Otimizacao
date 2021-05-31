@@ -21,14 +21,13 @@ def metgrad(x,y):
         k += 1
         if k == 100:
             break
-        elif (abs(gradx) < 0.00000001 and abs(grady) < 0.00000001):
+        elif (abs(gradx) <= 0.00000001 and abs(grady) <= 0.00000001):
             break
     print ("Iter.: ", k)
     print ("Call Armijo: ", callarmijo)
     print ("Opt. Point: (", x, ",", y, ")")
     print ("Opt Value: ", f(x,y))
     print ("Error: ", modulograd(x,y))
-    print (hes(x,y))
     return 0
 
 print (metgrad(10,10))
